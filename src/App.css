@@ -1,0 +1,189 @@
+@import url("https://fonts.cdnfonts.com/css/homer-simpson-revised");
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: "Homer Simpson Revised", sans-serif;
+  text-decoration: none;
+}
+
+.body {
+  padding: 2rem;
+}
+
+.header {
+  background-image: url(./components/background-the-simpsons-yellow-background-homer-simpson.jpg);
+  height: 400px;
+
+  background-size: cover;
+}
+
+.header > h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+}
+
+h1 {
+  padding: 10px;
+}
+
+.input {
+  display: flex;
+  align-content: center;
+  /* justify-content: center; */
+  /* align-items: center; */
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+  border: none;
+  text-align: center;
+  margin: 0 auto;
+}
+.sort h4 {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.sort {
+  padding: 0.7rem 1rem;
+  border-radius: 50px;
+}
+
+#sortOrder {
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.count {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.character-card {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 15px;
+  padding: 1rem;
+  height: auto;
+}
+
+.character-name {
+  justify-content: center;
+  align-items: center;
+}
+
+.quote-image-container {
+  display: flex;
+  column-gap: 5rem;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-style: italic;
+}
+
+.quote-image-container img {
+  height: 200px;
+  width: auto;
+}
+
+/* Align image on the left side */
+.character-card.left .quote-image-container {
+  flex-direction: row-reverse;
+}
+
+/* Align image on the right side */
+.character-card.right .quote-image-container {
+  flex-direction: row;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-evenly;
+  /* margin-bottom: 2rem; */
+}
+
+.favourite-button,
+.delete-button {
+  background-color: #fed90f;
+  border-radius: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+  margin: 10px;
+  font-size: 1rem;
+  font-weight: bolder;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.favourite-button.active {
+  background-color: rgb(11, 220, 11);
+}
+
+/* Spinner */
+.lds-circle {
+  display: inline-block;
+  transform: translateZ(1px);
+}
+.lds-circle > div {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  background: rgb(255, 8, 0);
+  animation: lds-circle 2.4s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+@keyframes lds-circle {
+  0%,
+  100% {
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 0.5);
+  }
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(1800deg);
+    animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1);
+  }
+  100% {
+    transform: rotateY(3600deg);
+  }
+}
+@media screen and (max-width: 450px) {
+  .character-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .character-card.left.right .quote-image-container {
+    flex-direction: column;
+  }
+
+  .character-card.right .quote-image-container {
+    flex-direction: column;
+  }
+
+  .controls {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+}
